@@ -39,6 +39,42 @@ repositories {
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 
+// This version constraint would normally be sourced from a shared, published module
+dependencies.constraints {
+    compile('overridestrategy:transitivedeb') {
+        version {
+            strictly '1.0.0'
+        }
+    }
+}
+
+// This dependency is declared by the build
 dependencies {
     compile 'overridestrategy:a:1.0.0'
 }
+
+
+// This component-metadata-rule override allows this project to comply with constraints
+dependencies.components {
+    withModule('overridestrategy:a') {
+            withDependencies { deps ->
+                deps.each { dep ->
+                    if (dep.name == 'transitivedeb') {
+                        dep.version {
+                            prefer '1.0.0'
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*
+// Alternative override using dependency-resolve-rule
+configurations.compile.resolutionStrategy.eachDependency { details ->
+    if (details.requested.name == 'transitivedeb') {
+        details.useVersion('1.0.0')
+    }
+}
+*/
