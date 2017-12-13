@@ -42,7 +42,7 @@ sourceCompatibility = JavaVersion.VERSION_1_8
 
 dependencyRecommendations {
     strategy OverrideTransitives
-    map recommendations: ['overridestrategy:transitivedeb': '1.0.0']
+    map recommendations: ['overridestrategy:transitivedeb': '1.0.1']
 }
 
 dependencies {
