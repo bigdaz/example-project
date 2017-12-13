@@ -1,0 +1,53 @@
+{
+  "formatVersion": "0.3",
+  "component": {
+    "group": "example.nebula",
+    "module": "rule-constraints",
+    "version": "1.0.1",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "4.5-20171213021106+0000",
+      "buildId": "545vuct32bdvzdkecxfyyraymm"
+    }
+  },
+  "variants": [
+    {
+      "name": "runtime",
+      "attributes": {
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencyConstraints": [
+        {
+          "group": "rejectrule",
+          "module": "reject",
+          "version": {
+            "rejects": [
+              "1.0.1"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "api",
+      "attributes": {
+        "org.gradle.usage": "java-api"
+      },
+      "dependencyConstraints": [
+        {
+          "group": "rejectrule",
+          "module": "reject",
+          "version": {
+            "rejects": [
+              "1.0.1"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
