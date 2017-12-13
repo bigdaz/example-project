@@ -23,7 +23,6 @@ plugins {
 
     id 'nebula.override' version '3.0.2'
     id 'nebula.optional-base' version '3.2.0'
-    id 'nebula.resolution-rules' version '5.0.2'
     id 'nebula.dependency-lock' version '4.9.5'
 }
 
@@ -47,7 +46,6 @@ configurations.all {
 
 dependencies {
     compile 'example.nebula:bom:1.+'
-    resolutionRules 'example.nebula:rules:1.+'
 
     implementation 'alignmentrule:b0:1.+'
     implementation 'alignmentrule:b1:1.+'
