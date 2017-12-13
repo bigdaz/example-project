@@ -1,0 +1,3 @@
+rootProject.name = 'rule-constraints'
+
+gradle.experimentalFeatures.enable()

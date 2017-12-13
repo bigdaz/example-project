@@ -1,0 +1,31 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group = 'example.nebula'
+version = '1.0.1'
+
+dependencies {
+    constraints {
+        api('rejectrule:reject') {
+            version {
+                reject('1.0.1')
+            }
+        }
+    }
+}
+
+publishing {
+    publications {
+        rules(MavenPublication) {
+            from components.javaLibraryPlatform
+        }
+    }
+    repositories {
+        maven {
+            name 'example'
+            url '../repository/maven'
+        }
+    }
+}
