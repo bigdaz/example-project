@@ -20,10 +20,9 @@ plugins {
     id 'nebula.ivy-publish' version '5.1.5'
     id 'nebula.javadoc-jar' version '5.1.5'
     id 'nebula.source-jar' version '5.1.5'
-    
+
     id 'nebula.override' version '3.0.2'
     id 'nebula.optional-base' version '3.2.0'
-    id 'nebula.dependency-recommender' version '5.0.0'
     id 'nebula.resolution-rules' version '5.0.2'
     id 'nebula.dependency-lock' version '4.9.5'
 }
@@ -47,7 +46,7 @@ configurations.all {
 }
 
 dependencies {
-    nebulaRecommenderBom 'example.nebula:bom:1.+@pom'
+    compile 'example.nebula:bom:1.+'
     resolutionRules 'example.nebula:rules:1.+'
 
     implementation 'alignmentrule:b0:1.+'
