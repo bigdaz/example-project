@@ -70,7 +70,32 @@ dependencies {
 
     compileOnly 'sustitutionrule:asub:1.0.0'
 
-    runtime 'rejectrule:reject:1.+'
+    // This works, but is impractical
+    runtime('rejectrule:reject:1.+') {
+        version {
+            reject '1.0.1'
+        }
+    }
+
+    // Neither of these work, for the same reason:
+    // we can't solve the graph even though there's a relatively simple solution.
+    /* Define reject constraint inline
+    dependencies {
+        runtime
+        constraints {
+            runtime('rejectrule:reject') {
+                version {
+                    reject '1.0.1'
+                }
+            }
+        }
+    }
+    */
+    /* Reference published reject constraint
+    dependencies {
+        runtime 'example.nebula:rule-constraints:1.+'
+    }
+    */
 
     runtime 'replacerule:replacementex0:1.0.0'
     runtime 'replacerule:replacementex1:1.0.0'
