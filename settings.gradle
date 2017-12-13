@@ -6,3 +6,5 @@ pluginManagement {
 }
 
 rootProject.name = 'example-project'
+
+gradle.experimentalFeatures.enable()
