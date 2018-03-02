@@ -13,3 +13,13 @@
     }
   ]
 }
+
+/* in platform */
+variant {
+    constraints {
+        "sustitutionrule:substitute") {
+            prefer "1.0.1"
+            reject "1.0.0"
+        }
+    }
+}
